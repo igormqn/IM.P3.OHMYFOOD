@@ -1,0 +1,53 @@
+.operation{
+    padding: 1rem;
+    ol{
+        gap: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        counter-reset: steps;
+        
+        @media (max-width:992px){
+            flex-direction: column;
+        }
+    }
+    li::before{
+        counter-increment: steps;                /* On incrémente le compteur section */
+        content: "  " counter(steps) "  ";
+        color: white;
+        background-color: #9356dc;
+        position: absolute;
+        display: grid;
+        place-items: center;
+        border-radius: 80px;
+        left: -1rem;
+        top: 1rem;
+        width: 2rem;
+        height: 2rem;
+    }
+    li{
+        list-style-type: none;
+        position: relative;
+        font-family: "Roboto";
+        padding: 1.5rem 2rem;
+        background-color: #f6f6f6;
+        flex-grow: 1;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 30%);
+    }
+    li:hover{
+        transform: scale(1.01);
+        opacity: 0.8;
+        cursor: pointer;
+        transition: .3s;
+        box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 0.7);
+    }
+    .fas{
+        margin-right: 15px;
+        font-size: 1rem;
+        color: gray;
+    }
+    .fa-store{
+        color: #9356dc;
+    }
+ 
+}  

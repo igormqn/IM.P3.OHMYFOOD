@@ -1,0 +1,28 @@
+main{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.location{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f3;
+    padding: 0.5rem;
+    gap: 1rem;
+}
+.map-icon i{
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.map-city input{
+    margin-left: 10px;
+    font-size: 19px;
+    background-color: #f3f3f3;
+    border: none;
+    height: 40px;
+    width: 140px;
+}

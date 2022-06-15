@@ -1,20 +1,418 @@
-*,::before, ::after{
-    box-sizing:border-box;
+@charset "UTF-8";
+*, ::before, ::after {
+  box-sizing: border-box;
 }
-body{
-    margin: 0;
+
+body {
+  margin: 0;
+  font-family: "roboto";
 }
-header{
-    font-family: "Shrikhand", cusive;
-    text-align: center;
-    box-shadow: 0px 3px 3px 1px grey;
-    padding: 0.3rem;
-   
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
+
+h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: block;
+}
+
+header {
+  font-family: "Shrikhand", cusive;
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  padding: 0.3rem;
+  background-color: #f6f6f6;
+  position: relative;
+}
+
 header a {
-    color: black;
+  color: black;
 }
-a{
+
+a {
+  text-decoration: none;
+}
+
+.loader {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  animation: disappear 200ms 2s forwards;
+  transform-origin: top;
+}
+.loader::after {
+  content: " ";
+  animation: spin 1s infinite linear;
+  height: 150px;
+  width: 150px;
+  border-top: 5px solid #9356DC;
+  border-right: 5px solid transparent;
+  border-radius: 100px;
+  animation: spin 1s infinite ease-in-out;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+.map-icon i {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.map-city input {
+  margin-left: 10px;
+  font-size: 19px;
+  background-color: #f3f3f3;
+  border: none;
+  height: 40px;
+  width: 140px;
+}
+
+.reservation {
+  background-color: #fafafa;
+  width: 100%;
+  height: auto;
+  padding-bottom: 30px;
+  font-family: "roboto";
+}
+.reservation .reservation-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 45px;
+  flex-direction: column;
+}
+.reservation .reservation-title {
+  text-align: center;
+  max-width: 250px;
+  margin: 0;
+  font-size: 25px;
+}
+.reservation .reservation-text {
+  text-align: center;
+  font-size: 18px;
+}
+.reservation .reservation-button {
+  color: white;
+  background: linear-gradient(#FF79DA, #9356DC);
+  padding: 15px 20px;
+  border-radius: 40px;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 0.6rem;
+}
+.reservation .reservation-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+}
+
+.operation {
+  padding: 1rem;
+}
+.operation ol {
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  counter-reset: steps;
+}
+@media (max-width: 992px) {
+  .operation ol {
+    flex-direction: column;
+  }
+}
+.operation li::before {
+  counter-increment: steps; /* On incrémente le compteur section */
+  content: "  " counter(steps) "  ";
+  color: white;
+  background-color: #9356dc;
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 80px;
+  left: -1rem;
+  top: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+.operation li {
+  list-style-type: none;
+  position: relative;
+  font-family: "Roboto";
+  padding: 1.5rem 2rem;
+  background-color: #f6f6f6;
+  flex-grow: 1;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.operation li:hover {
+  transform: scale(1.01);
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.7);
+}
+.operation .fas {
+  margin-right: 15px;
+  font-size: 1rem;
+  color: gray;
+}
+.operation .fa-store {
+  color: #9356dc;
+}
+
+.restaurant {
+  padding: 1rem;
+  background-color: #f6f6f6;
+}
+.restaurant h2 {
+  margin-bottom: 2rem;
+}
+.restaurant .restaurant-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 0 5rem;
+}
+@media screen and (max-width: 992px) {
+  .restaurant .restaurant-block {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0;
+  }
+}
+.restaurant .new {
+  position: relative;
+}
+.restaurant .new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  background-color: #99E2d0;
+  color: green;
+  place-items: center;
+  display: grid;
+  right: 1rem;
+  top: 1rem;
+}
+.restaurant .restaurant-card:hover {
+  transition: 1s;
+  transform: scale(1.02);
+  box-shadow: 0px 0px 10px 2px rgba(147, 86, 220, 0.6);
+  border-radius: 30px;
+}
+.restaurant .restaurant-card {
+  border-radius: 30px;
+}
+.restaurant .restaurant-card .restaurant-images {
+  height: 13rem;
+  border-radius: 30px 30px 0 0;
+  background-size: cover;
+}
+.restaurant .restaurant-card .image-1 {
+  background-image: url("../../images/restaurants/lapalettedugout.jpg");
+}
+.restaurant .restaurant-card .image-2 {
+  background-image: url("../../images/restaurants/lanote.jpg");
+}
+.restaurant .restaurant-card .image-3 {
+  background-image: url("../../images/restaurants/alafrancaise.jpg");
+}
+.restaurant .restaurant-card .image-4 {
+  background-image: url("../../images/restaurants/ledelice.jpg");
+}
+.restaurant .restaurant-card .restaurant-name {
+  background-color: white;
+  position: relative;
+  border-radius: 0 0 35px 35px;
+  height: 4.5rem;
+}
+.restaurant .restaurant-card .restaurant-name h3 {
+  padding: 0.5rem;
+}
+.restaurant .restaurant-card .restaurant-name p {
+  margin-bottom: 0.5rem;
+  padding-left: 0.7rem;
+}
+.restaurant .restaurant-card .restaurant-name h3, .restaurant .restaurant-card .restaurant-name p {
+  align-items: center;
+}
+.restaurant .restaurant-card .restaurant-name .block-heart-icone {
+  right: 1rem;
+}
+.restaurant .restaurant-card .restaurant-name i {
+  right: 1rem;
+  top: 10%;
+}
+.restaurant .restaurant-card .restaurant-name .stroke-heart {
+  position: absolute;
+  visibility: visible;
+  font-size: 40px;
+}
+.restaurant .restaurant-card .restaurant-name .gradient-heart {
+  background: -moz-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
+  background: -webkit-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
+  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+  font-size: 40px;
+  transition: all 400ms ease-in-out;
+}
+.restaurant .restaurant-card .restaurant-name .stroke-heart:hover {
+  opacity: 0;
+  transition: 0s;
+}
+.restaurant .restaurant-card .restaurant-name .gradient-heart:hover {
+  opacity: 1;
+}
+
+footer {
+  padding-top: 15px;
+  background-color: #353535;
+  height: 10rem;
+}
+@media screen and (max-width: 992px) {
+  footer {
+    display: block;
+    flex-direction: column;
+  }
+}
+
+.logo-footer {
+  margin-left: 120px;
+}
+.logo-footer a {
+  text-decoration: none;
+  color: white;
+  font-family: "Shrikhand";
+}
+.logo-footer a h2 {
+  font-family: "Shrikhand";
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 768px) {
+  .logo-footer {
+    margin-left: 15px;
+  }
+}
+
+.footer-links {
+  display: flex;
+  margin-left: 2px;
+}
+@media screen and (max-width: 992px) {
+  .footer-links {
+    display: flex;
+    margin-right: 50px;
+    flex-direction: column;
+  }
+  .footer-links a {
     text-decoration: none;
-    
+  }
 }
+
+.footer-link1 {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+  margin-left: 120px;
+}
+.footer-link1 p {
+  margin-left: 10px;
+}
+@media screen and (max-width: 768px) {
+  .footer-link1 {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+    margin-left: 15px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-200deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes apparition {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

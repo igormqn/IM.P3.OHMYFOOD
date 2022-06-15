@@ -1,0 +1,422 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "roboto";
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  display: block;
+}
+
+header {
+  font-family: "Shrikhand", cusive;
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  padding: 0.3rem;
+  background-color: #f6f6f6;
+  position: relative;
+}
+
+header a {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.loader {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  animation: disappear 200ms 2s forwards;
+  transform-origin: top;
+}
+.loader::after {
+  content: " ";
+  animation: spin 1s infinite linear;
+  height: 150px;
+  width: 150px;
+  border-top: 5px solid #9356DC;
+  border-right: 5px solid transparent;
+  border-radius: 100px;
+  animation: spin 1s infinite ease-in-out;
+}
+
+footer {
+  padding-top: 15px;
+  background-color: #353535;
+  height: 10rem;
+}
+@media screen and (max-width: 992px) {
+  footer {
+    display: block;
+    flex-direction: column;
+  }
+}
+
+.logo-footer {
+  margin-left: 120px;
+}
+.logo-footer a {
+  text-decoration: none;
+  color: white;
+  font-family: "Shrikhand";
+}
+.logo-footer a h2 {
+  font-family: "Shrikhand";
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 768px) {
+  .logo-footer {
+    margin-left: 15px;
+  }
+}
+
+.footer-links {
+  display: flex;
+  margin-left: 2px;
+}
+@media screen and (max-width: 992px) {
+  .footer-links {
+    display: flex;
+    margin-right: 50px;
+    flex-direction: column;
+  }
+  .footer-links a {
+    text-decoration: none;
+  }
+}
+
+.footer-link1 {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+  margin-left: 120px;
+}
+.footer-link1 p {
+  margin-left: 10px;
+}
+@media screen and (max-width: 768px) {
+  .footer-link1 {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+    margin-left: 15px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-200deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes apparition {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.header-arrow {
+  position: absolute;
+  left: 2rem;
+  height: 2rem;
+  width: 2rem;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: black;
+}
+
+img {
+  max-width: 100%;
+  max-height: 32rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+main {
+  margin-top: -10rem;
+  position: relative;
+  background-color: #f6f6f6;
+  border-radius: 30px 30px 0 0;
+  max-width: 100%;
+}
+main h2 {
+  font-family: "Shrikhand";
+  padding: 2rem;
+}
+main .block-heart-icone i {
+  right: 1rem;
+  transform: translateY(-68px);
+}
+main .block-heart-icone .stroke-heart {
+  position: absolute;
+  visibility: visible;
+  font-size: 40px;
+}
+main .block-heart-icone .gradient-heart {
+  background: -moz-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
+  background: -webkit-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
+  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+  font-size: 40px;
+  transition: all 400ms ease-in-out;
+}
+main .block-heart-icone .stroke-heart:hover {
+  opacity: 0;
+  transition: 0s;
+}
+main .block-heart-icone .gradient-heart:hover {
+  opacity: 1;
+}
+main .main-menu {
+  display: grid;
+  gap: 1rem;
+  overflow: hidden;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 992px) {
+  main .main-menu {
+    grid-template-columns: 1fr;
+  }
+}
+main .main-menu h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+  top: 0rem;
+  right: -1rem;
+}
+main .main-menu h3::after {
+  content: "";
+  top: 1.4rem;
+  left: 0;
+  height: 0.25rem;
+  width: 2rem;
+  display: inline-block;
+  background-color: #99e2d0;
+  position: absolute;
+}
+main .main-menu .menu-column {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+main .main-menu #case1 {
+  animation: apparition 2s;
+  animation-fill-mode: both;
+  animation-delay: 100ms;
+}
+main .main-menu #case2 {
+  animation: apparition 2s;
+  animation-fill-mode: both;
+  animation-delay: 200ms;
+}
+main .main-menu #case3 {
+  animation: apparition 2s;
+  animation-fill-mode: both;
+  animation-delay: 300ms;
+}
+main .main-menu #case4 {
+  animation: apparition 2s;
+  animation-fill-mode: both;
+  animation-delay: 400ms;
+}
+main .main-menu .menu-case {
+  display: flex;
+  background-color: white;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  margin: 1rem;
+  cursor: pointer;
+  display: flex;
+  overflow: hidden;
+  animation: apparition 2s;
+  animation-fill-mode: both;
+}
+main .main-menu .menu-case .menu-card-title {
+  padding: 1rem;
+  overflow-x: hidden;
+}
+main .main-menu .menu-case .menu-card-title h4 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+main .main-menu .menu-case .menu-card-title p {
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+main .main-menu .price {
+  margin-left: auto;
+  padding: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: flex-end;
+}
+main .main-menu .validation-block {
+  margin-right: -4rem;
+  background-color: #99e2d0;
+  width: 4rem;
+  transition: all 0.8s;
+}
+main .main-menu .validation-block i {
+  display: grid;
+  place-items: center;
+  margin-top: 21px;
+  font-size: 25px;
+  color: white;
+}
+main .main-menu .menu-case:hover .validation-block {
+  margin: 0;
+}
+main .main-menu .menu-case:hover .validation-block i {
+  animation: spin 0.5s ease-in-out;
+}
+
+.container-button {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  padding: 3rem 0;
+}
+.container-button .order-button {
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  color: #fff;
+  background-color: #686868;
+  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  transition-duration: 0.25s;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.container-button .order-button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-200deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes apparition {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=menu.css.map */

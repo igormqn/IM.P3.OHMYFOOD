@@ -1,0 +1,24 @@
+{
+  "name": "im.p3.ohmyfood",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch style.scss style.css",
+    "menu": "sass --watch menu.scss menu.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mqn1997/IM.P3.OHMYFOOD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mqn1997/IM.P3.OHMYFOOD/issues"
+  },
+  "homepage": "https://github.com/mqn1997/IM.P3.OHMYFOOD#readme",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.52.3"
+  }
+}
