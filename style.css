@@ -237,16 +237,16 @@ main {
   background-size: cover;
 }
 .restaurant .restaurant-card .image-1 {
-  background-image: url("../../images/restaurants/lapalettedugout.jpg");
+  background-image: url(".../../images/restaurants/lapalettedugout.jpg");
 }
 .restaurant .restaurant-card .image-2 {
-  background-image: url("../../images/restaurants/lanote.jpg");
+  background-image: url(".../../images/restaurants/lanote.jpg");
 }
 .restaurant .restaurant-card .image-3 {
-  background-image: url("../../images/restaurants/alafrancaise.jpg");
+  background-image: url(".../../images/restaurants/alafrancaise.jpg");
 }
 .restaurant .restaurant-card .image-4 {
-  background-image: url("../../images/restaurants/ledelice.jpg");
+  background-image: url(".../../images/restaurants/ledelice.jpg");
 }
 .restaurant .restaurant-card .restaurant-name {
   background-color: white;
