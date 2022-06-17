@@ -92,27 +92,21 @@ i{
      border-radius: 1rem;
      overflow: hidden;
     }
-    #case1{
+    #case1, #case5, #case8{
         animation: apparition 2s;
         animation-fill-mode: both;
         animation-delay: 100ms;
     }
-    #case2{
+    #case2, #case6, #case9{
         animation: apparition 2s;
         animation-fill-mode: both;
         animation-delay: 200ms;
     }
-    #case3{
+    #case3, #case7, #case10{
         animation: apparition 2s;
         animation-fill-mode: both;
         animation-delay: 300ms;
     }
-    #case4{
-        animation: apparition 2s;
-        animation-fill-mode: both;
-        animation-delay: 400ms;
-    }
-    
     .menu-case{
          display: flex;
          background-color: white;

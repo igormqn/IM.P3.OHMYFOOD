@@ -271,25 +271,20 @@ main .main-menu .menu-column {
   border-radius: 1rem;
   overflow: hidden;
 }
-main .main-menu #case1 {
+main .main-menu #case1, main .main-menu #case5, main .main-menu #case8 {
   animation: apparition 2s;
   animation-fill-mode: both;
   animation-delay: 100ms;
 }
-main .main-menu #case2 {
+main .main-menu #case2, main .main-menu #case6, main .main-menu #case9 {
   animation: apparition 2s;
   animation-fill-mode: both;
   animation-delay: 200ms;
 }
-main .main-menu #case3 {
+main .main-menu #case3, main .main-menu #case7, main .main-menu #case10 {
   animation: apparition 2s;
   animation-fill-mode: both;
   animation-delay: 300ms;
-}
-main .main-menu #case4 {
-  animation: apparition 2s;
-  animation-fill-mode: both;
-  animation-delay: 400ms;
 }
 main .main-menu .menu-case {
   display: flex;
